@@ -1,0 +1,28 @@
+@import '~vuetify/src/stylus/settings/_theme.styl'
+
+fixed-table-header($max-height) {
+  .v-table__overflow {
+    overflow-y: auto !important
+    max-height: $max-height !important
+  }
+
+  .theme--light th {
+    background-color: $material-light.cards
+  }
+  .theme--dark th {
+    background-color: $material-dark.cards
+  }
+
+  th {
+    position: sticky
+    top: 0
+    z-index: 4 // 1 less than v-overflow
+  }
+
+  tr.v-datatable__progress {
+    th {
+      top: 55px
+      height: 1px;
+    }
+  }
+}
