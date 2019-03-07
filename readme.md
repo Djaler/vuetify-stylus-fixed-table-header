@@ -16,3 +16,13 @@ Call function inside your table selector and specify maximum height for table.
     fixed-table-header(65vh)
 }
 ```
+
+You can also specify different height for different media queries by providing hash to function argument.
+```styl
+$heights = {};
+
+$heights['only screen'] = 65vh;
+$heights['only screen and (max-width: 959px)'] = 50vh;
+
+fixed-table-header($heights)
+```
