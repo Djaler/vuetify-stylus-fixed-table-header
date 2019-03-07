@@ -1,9 +1,18 @@
 @import '~vuetify/src/stylus/settings/_theme.styl'
 
-fixed-table-header($max-height) {
+fixed-table-header($height) {
   .v-table__overflow {
     overflow-y: auto !important
-    max-height: $max-height !important
+
+    if typeof($height) == 'object' {
+      for $key, $value in $height {
+        @media $key {
+          max-height: $value !important
+        }
+      }
+    } else {
+      max-height: $height !important
+    }
   }
 
   .theme--light th {
