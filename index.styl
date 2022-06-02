@@ -1,5 +1,3 @@
-@import '~vuetify/src/stylus/settings/_theme.styl'
-
 fixed-table-header($height) {
   .v-table__overflow {
     overflow-y: auto !important
@@ -16,10 +14,10 @@ fixed-table-header($height) {
   }
 
   .theme--light th {
-    background-color: $material-light.cards
+    background-color: $material-light is defined ? $material-light.cards : #FFFFFF
   }
   .theme--dark th {
-    background-color: $material-dark.cards
+    background-color: $material-dark is defined ? $material-dark.cards : #424242
   }
 
   th {
